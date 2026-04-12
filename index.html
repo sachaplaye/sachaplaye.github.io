@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Sacha's Portfolio</title>
+    
+    <!-- Import Google Fonts: Inter (300, 400) and Merriweather (400) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Merriweather:wght@400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Body and standard text defaults to Inter Regular (400) */
+        body { 
+            background-color: #F4F0EB; 
+            color: #2C2C2C; 
+            font-family: 'Inter', sans-serif; 
+            font-weight: 400; 
+            margin: 0; /* Removes default browser margin */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensures footer stays at the bottom even if content is short */
+        }
+
+        /* Force headings to respect the 300 weight (so browsers don't default them to bold) */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 300;
+        }
+
+        /* The Header Menu Bar */
+        header {
+            font-family: 'Merriweather', serif;
+            font-weight: 400;
+            font-size: 1.3rem; /* <-- Make menu words bigger */
+            padding: 20px 10px; /* Adjusted padding to look balanced */
+            margin: 0 10px; /* <-- Pull the border 10px in from the screen edges */
+            display: flex;
+            gap: 20px;
+            border-bottom: 1px solid #2C2C2C; /* Minimal header separation line */
+        }
+
+        /* Adding some padding to the main content so it's not touching the edges */
+        main {
+            padding: 30px 20px;
+            flex: 1; /* Pushes the footer down naturally */
+        }
+
+        /* TWEAK 3: Footer styling */
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            margin: 0 10px;
+            border-top: 1px solid #e0dbd5; /* Subtle top border for the footer */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Menu Bar -->
+    <header>
+        <div>Home</div>
+        <div>Portfolio</div>
+        <div>CV</div>
+    </header>
+
+    <!-- Main Body Content -->
+    <main>
+        <h1>Hello World - Portfolio Under Construction</h1>
+        <h2>Testing Header weight 300 thin look</h2>
+        <p>Testing the text body format that this reads well on all viewports as a starting point.</p>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <footer>
+        <p>&copy; 2026 Sacha Playe. All rights reserved.</p>
+        <p>[ LinkedIn Icon ] &nbsp; [ Email Icon ]</p>
+    </footer>
+
+</body>
+</html>
