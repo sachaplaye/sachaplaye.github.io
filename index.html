@@ -1,83 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow">
-    <title>Sacha Playe's Portfolio</title>
-    
-    <!-- Import Google Fonts: Inter (300, 400) and Merriweather (400) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Merriweather:wght@400&display=swap" rel="stylesheet">
-    
-    <style>
-        /* Body and standard text defaults to Inter Regular (400) */
-        body { 
-            background-color: #F4F0EB; 
-            color: #2C2C2C; 
-            font-family: 'Inter', sans-serif; 
-            font-weight: 400; 
-            margin: 0; /* Removes default browser margin */
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh; /* Ensures footer stays at the bottom even if content is short */
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sacha Playe — Portfolio</title>
 
-        /* Force headings to respect the 300 weight (so browsers don't default them to bold) */
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: 300;
-        }
-
-        /* The Header Menu Bar */
-        header {
-            font-family: 'Merriweather', serif;
-            font-weight: 400;
-            font-size: 1.3rem; /* <-- Make menu words bigger */
-            padding: 20px 10px; /* Adjusted padding to look balanced */
-            margin: 0 10px; /* <-- Pull the border 10px in from the screen edges */
-            display: flex;
-            gap: 20px;
-            border-bottom: 1px solid #2C2C2C; /* Minimal header separation line */
-        }
-
-        /* Adding some padding to the main content so it's not touching the edges */
-        main {
-            padding: 30px 20px;
-            flex: 1; /* Pushes the footer down naturally */
-        }
-
-        /* TWEAK 3: Footer styling */
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 0.9rem;
-            margin: 0 10px;
-            border-top: 1px solid #e0dbd5; /* Subtle top border for the footer */
-        }
-    </style>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Merriweather:wght@400&display=swap" rel="stylesheet">
+  
+  <!-- Link to the external CSS file -->
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <!-- Header Menu Bar -->
-    <header>
-        <div>Home</div>
-        <div>Portfolio</div>
-        <div>CV</div>
-    </header>
+  <!-- ========== HEADER / NAV ========== -->
+  <header>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#" class="active">Portfolio</a>
+      <a href="#">CV</a>
+    </nav>
+  </header>
 
-    <!-- Main Body Content -->
-    <main>
-        <h1>Hello World - Portfolio Under Construction</h1>
-        <h2>Testing Header weight 300 thin look</h2>
-        <p>Testing the text body format that this reads well on all viewports as a starting point.</p>
-    </main>
+  <!-- ========== sky SECTION ========== -->
+  <section class="sky">
+    <!-- Soft flowing light-blue SVG wave background -->
+    <div class="sky-bg">
+      <svg viewBox="0 0 1440 500" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="skyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#D6EAF8; stop-opacity:0.6" />
+            <stop offset="50%" style="stop-color:#E6F0F9; stop-opacity:0.8" />
+            <stop offset="100%" style="stop-color:#F4F0EB; stop-opacity:0" />
+          </linearGradient>
+        </defs>
+        <!-- Base wash -->
+        <rect width="1440" height="500" fill="url(#skyGrad)" />
+        <!-- Flowing wave layers -->
+        <path d="M0,260 C240,320 480,200 720,260 C960,320 1200,220 1440,280 L1440,500 L0,500 Z"
+              fill="#D6EAF8" fill-opacity="0.3" />
+        <path d="M0,300 C300,360 600,260 900,320 C1100,360 1300,290 1440,330 L1440,500 L0,500 Z"
+              fill="#CADFF0" fill-opacity="0.25" />
+        <path d="M0,370 C200,400 500,340 800,380 C1050,410 1250,360 1440,390 L1440,500 L0,500 Z"
+              fill="#BDD5EA" fill-opacity="0.15" />
+      </svg>
+    </div>
 
-    <!-- Footer Placeholder -->
-    <footer>
-        <p>&copy; 2026 Sacha Playe. All rights reserved.</p>
-        <p>[ LinkedIn Icon ] &nbsp; [ Email Icon ]</p>
-    </footer>
+    <div class="sky-content">
+      <h1>Hello World</h1>
+      <p>Testing the text body format to see how it works. This placeholder text demonstrates the layout and typography of the sky section.</p>
+    </div>
+  </section>
+
+  <!-- ========== PORTFOLIO CARDS ========== -->
+  <section class="portfolio">
+    <div class="card-carousel">
+      <article class="card">
+        <h2>Card One</h2>
+        <p>Testing the text body format, for the first card. A brief description of this portfolio topic goes here.</p>
+      </article>
+
+      <article class="card">
+        <h2>Card Two</h2>
+        <p>Testing the text body format, for the first card. A brief description of this portfolio topic goes here.</p>
+      </article>
+
+      <article class="card">
+        <h2>Card Title / Info</h2>
+        <p>Card text body info format, for the card. Additional project details and context live in this space.</p>
+      </article>
+
+      <article class="card">
+        <h2>Card Four</h2>
+        <p>Another portfolio topic with a short summary. Replace this with real project content when ready.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <p>&copy; 2026 Sacha Playe. All rights reserved.</p>
+    <div class="social-links">
+      <a href="#" aria-label="LinkedIn">
+        <!-- LinkedIn Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+      </a>
+      <a href="#" aria-label="Email">
+        <!-- Email Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+        </svg>
+      </a>
+    </div>
+  </footer>
 
 </body>
 </html>
