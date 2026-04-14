@@ -188,29 +188,46 @@ nav a.active {
 
 .card {
   background-color: #FDFCFA;
-  background-image: linear-gradient(135deg, #FFFFFF 0%, #FDFCFA 50%, #F5F3EE 100%); /* Subtle paper marbling wash */
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04); /* Very soft shadow to lift it off the alabaster background */
-  border: 1px solid #F0EBE1; /* Faint physical edge to define the paper */
+  
+  /* 
+    CHANGES: 
+    1. Made the bottom-right corner sky blue (#d6eaf8f0) to complement the menu bar in the wash effect.
+    2. Added an invisible inline SVG 'noise' generator. This adds a physical "paper grain" texture over the gradient.
+  */
+  background-image: 
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.5' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.11'/%3E%3C/svg%3E"),
+    linear-gradient(135deg, #FFFFFFE6 0%, #FDFCFACC 75%, #d6eaf8f0 100%);
+  
+  /* Blend the noise specks directly into the blue gradient */
+  background-blend-mode: multiply;
+
+  /* Slightly stronger default shadow to make it pop */
+  box-shadow: 0 4px 16px #0000000D; 
+  /* Slightly darker edge to give the paper physical definition */
+  border: 1px solid #e3dcd1d0; 
   
   border-radius: 12px;
   padding: 32px 28px;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  
+  /* Slowed the transition down a tiny bit (0.3s) for a smoother feel */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   scroll-snap-align: start;
   
-  /* CHANGED: Fixed Prescribed Dimensions */
-  flex-shrink: 0;          /* Prevents the card from squeezing */
-  width: 330px;            /* Ideal prescribed width */
-  height: 460px;           /* Prescribed placeholder height */
+  flex-shrink: 0;          
+  width: 330px;            
+  height: 460px;           
 }
 
-/* Make the hover shadow slightly deeper so the paper feels like it "lifts" when hovered */
+/* === ENHANCED HOVER LIFT === */
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  /* Lifts twice as high as before (-8px instead of -4px) */
+  transform: translateY(-8px);
+  /* Much deeper, wider shadow to emphasize the card floating up toward the user */
+  box-shadow: 0 16px 32px #0000001F;
 }
 
 .card h1 {
@@ -321,10 +338,5 @@ footer .social-links a svg {
     font-size: 1.8rem; /* Make header slightly smaller to save space */
     margin-bottom: 5px;
   }
-  
-  /* .sky-content p {
-    font-size: 0.95rem;
-  } */
 
 }
-
