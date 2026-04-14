@@ -1,0 +1,23 @@
+<svg viewBox="0 0 1440 500" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Top-to-Bottom Gradient -->
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#d6eaf8f0" /> <!-- Bright Sky Blue at the very top -->
+      <stop offset="15%" stop-color="#F4F0EB" /> <!-- Hold the blue behind the menu -->
+      <stop offset="45%" stop-color="#F4F0EB" /> <!-- Transition fully to Alabaster right before the text -->
+      <stop offset="100%" stop-color="#F4F0EB" /> <!-- Solid Alabaster at the bottom -->
+    </linearGradient>
+  </defs>
+  
+  <!-- Base gradient background -->
+  <rect width="1440" height="500" fill="url(#skyGrad)" />
+  
+  <!-- Flowing wave layers using pure Alabaster with increasing opacity -->
+  <!-- This creates a flawless, non-muddy fade into the rest of your page -->
+  <path d="M0,260 C240,320 480,200 720,260 C960,320 1200,220 1440,280 L1440,500 L0,500 Z"
+        fill="#E9E6E1" fill-opacity="0.4" />
+  <path d="M0,300 C300,360 600,260 900,320 C1100,360 1300,290 1440,330 L1440,500 L0,500 Z"
+        fill="#E9E6E1" fill-opacity="0.8" />
+  <path d="M0,370 C200,400 500,340 800,380 C1050,410 1250,360 1440,390 L1440,500 L0,500 Z"
+        fill="#EFEBE6" fill-opacity="1" />
+</svg>
