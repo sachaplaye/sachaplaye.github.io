@@ -1,6 +1,7 @@
 /* ============================================
    RESET & GLOBAL STYLES
    ============================================ */
+
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -27,18 +28,22 @@ h1, h2, h3 {
   font-weight: 300;
 }
 
+
 /* ============================================
    GLOBAL LAYOUT CONSTRAINTS (The 1440px Wall)
    ============================================ */
+
 nav, main, footer {
   max-width: 1440px;        /* Stops growing at 1440px */
   width: calc(100% - 48px); /* Forces a 24px gap on left/right for smaller screens */
   margin: 0 auto;           /* Centres the 1440px column on giant screens */
 }
 
+
 /* ============================================
    CONTAINER — max 1440px centered
    ============================================ */
+
 .container {
   width: 100%;
   max-width: 1440px;
@@ -46,9 +51,11 @@ nav, main, footer {
   padding: 0 24px;
 }
 
+
 /* ============================================
    1. HEADER / NAVIGATION
    ============================================ */
+
 header {
   position: sticky;
   top: 0;
@@ -89,9 +96,11 @@ nav a.active {
   font-weight: 700;
 }
 
+
 /* ============================================
    2. sky SECTION
    ============================================ */
+
 .sky {
   position: relative;
   overflow: hidden;
@@ -146,19 +155,15 @@ nav a.active {
   text-indent: 1ch; /* Indent the first line to give it a more "book-like" feel */
 }
 
+
 /* ============================================
    3. PORTFOLIO CARDS SECTION
    ============================================ */
+
 .portfolio {
   flex: 1; /* Push footer down */
   padding: 20px 0 60px; /* Changed to 20px to get card in full view in smartphone */
   width: 100%;
-}
-
-.portfolio-heading {
-  max-width: 1440px;
-  margin: 0 auto 24px;
-  padding: 0 24px;
 }
 
 /* --- Universal Card Carousel (Desktop, Tablet & Mobile) --- */
@@ -247,6 +252,7 @@ nav a.active {
 /* ============================================
    4. FOOTER
    ============================================ */
+
 footer {
   text-align: center;
   padding: 20px 12px;
@@ -287,30 +293,75 @@ footer .social-links a svg {
   fill: #2C2C2C;
 }
 
+
 /* ============================================
    RESPONSIVE OVERRIDES
    ============================================ */
 
-/* Mobile (≤ 768px) */
+
+/* ===============================================
+   RESPONSIVE — Height Related
+   =============================================== */
+
+/* For shorter screens (iPhone SE, smaller Androids) */
+@media (max-height: 1000px) {
+  
+  .sky {
+  min-height: max(25vh, 250px); 
+  padding-bottom: 0px; /* Added cushion at the bottom */
+  }
+
+  .portfolio {
+    padding-bottom: 10px; /* Changed to 10px to get footer in full view in smartphone */
+  }
+
+  /* --- Universal Card Carousel (Desktop, Tablet & Mobile) --- */
+  .card-carousel {
+  /* Adds padding so the Alabaster background shows around the cards */
+    padding-bottom: 10px; /* Changed to 10px to get footer in full view in smartphone */
+  }
+
+  .card {
+    padding-bottom: 5px; /* Reduce padding to save vertical space */
+  }
+  
+  footer {
+    padding: 10px 12px; /* Tighten up the footer */
+  }
+
+  footer .social-links {
+    margin-top: 4px;    /* Reduce the gap */
+  }
+
+}
+
+
+/* ===============================================
+   RESPONSIVE — Width related
+   =============================================== */
+
+/* Mobile Phone (≤ 768px) */
 @media (max-width: 768px) {
-  /* .sky {
-    padding-top: 120px;
-  } */
 
   nav a {
   font-size: 1.7rem;
   }
-
-  /* Keep headings aligned nicely on phones */
-  .portfolio-heading {
-    padding: 0 16px;
-  }
   
+  .sky {
+  min-height: max(20vh, 200px); 
+  padding-bottom: 0px; /* Added cushion at the bottom */
+  }
+
   /* Mobile sky text alignment */
   .sky-content {
-    /* top right bottom left - Tweak the 24px to align text on mobile */
-    padding: 0 24px 0 24px; 
-    max-width: 540px;
+    margin-left: 0; 
+    margin-right: auto;
+    padding-left: 48px;
+  }
+
+  .sky-content h1 {
+    font-size: 1.8rem; /* Make header slightly smaller to save space */
+    margin-bottom: 5px;
   }
   
   /* Mobile card alignment */
@@ -322,21 +373,97 @@ footer .social-links a svg {
 
 }
 
-/* ============================================
-   RESPONSIVE — Landscape Mobile Phones
-   ============================================ */
-/* This targets devices that are sideways, but short (ignores iPads) */
-@media (max-height: 500px) and (orientation: landscape) {
-  
+
+/* ===============================================
+   RESPONSIVE — the Floor - Mobile Phone (≤ 400px)
+   =============================================== */
+
+@media (max-width: 400px) {
+
+  nav {
+    gap: clamp(12px, 6vw, 40px); /* Change space to Minimum, Preferred, Maximum */
+  }
+
+  nav a {
+  font-size: 1.6rem;
+  }
+
   .sky {
-    /* Pulls the padding way up so the sky and text fit on the short horizontal screen */
-    /* padding-top: 70px;  */
-    min-height: 270px; 
+    padding-top: 120px;
+    min-height: max(15vh, 150px); 
+    padding-bottom: 0px; /* Added cushion at the bottom */ 
   }
 
   .sky-content h1 {
-    font-size: 1.8rem; /* Make header slightly smaller to save space */
-    margin-bottom: 5px;
+    font-size: clamp(1.4rem, 2vw, 1.7rem); 
+    margin-bottom: 0;
   }
+
+  .sky-content h2 {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    margin-bottom: 0;
+  }
+
+  .sky-content p {
+      font-size: clamp(0.9rem, 2vw, 1.1rem);
+      line-height: 1.5;
+  }
+
+  .card {
+    width: 280px; /* Shrink the card width */
+    height: 380px; /* Shrink the card height */
+    padding: 20px 28px;
+  }
+
+  .card p {
+    padding-top: 0px;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+  }
+
+  footer {
+    padding: 10px 12px; /* Tighten up the footer */
+  }
+
+  footer p {
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  line-height: 1.6;
+  opacity: 0.7;
+  }
+
+  footer .social-links {
+    margin-top: 4px;    /* Reduce the gap */
+    font-size: 0.7rem;
+  }
+
+}
+
+
+/* ===============================================
+   4K & ULTRA-WIDE SCREENS (HARDWARE DETECTION)
+   =============================================== */
+
+/* min-device-width forces these rules based on the physical screen. */
+@media screen and (min-device-width: 2500px) {
+  
+  /* Expand the "wall" so full-screen 4K uses the space. */
+  nav, main, footer, .container, .sky-content, .card-carousel {
+    max-width: 2400px;
+  }
+
+  /* Scale up the fonts so they can be read */
+  nav a { font-size: 3.5rem; }
+  .sky-content h1 { font-size: 3.5rem; }
+  .sky-content h2 { font-size: 2.8rem; }
+  .sky-content p { font-size: 2rem; max-width: 1200px; }
+  
+  /* Scale up cards */
+  .card {
+    width: 500px; 
+    height: 700px; 
+    padding: 50px 40px; 
+  }
+
+  .card h1 { font-size: 2.5rem; }
+  .card p { font-size: 1.8rem; }
 
 }
